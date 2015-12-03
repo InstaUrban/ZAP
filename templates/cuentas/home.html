@@ -1,0 +1,96 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<title>Zap!</title>
+<head>
+<style>
+
+a{
+	color: white;
+	text-decoration: none;
+
+}
+
+table{
+	padding-top: 250px;
+}
+
+input{
+	width: 200px;
+	height: 30px;
+	border-color: #7acdff ;
+	border-radius: 5px;
+	-webkit-transition: width 0.5s;
+}
+input:hover{
+	width: 220px;
+}
+
+div {
+	border-radius: 5px;
+	width: 180px;
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #19a9ff;
+    font-family: Verdana;
+    -webkit-transition: width 2s, background-color 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
+	
+}
+div:hover {
+	background-color:#7acdff ;
+	width: 210px;
+	
+}
+div:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+</style>
+</head>
+<body background="{% static "img/back3.png" %}">
+
+<center><table><form method="POST">
+    	{% csrf_token %}
+<tr>
+				<td><img src="{% static "img/ZAP.png" %}"></td>
+			</tr>
+			
+<tr>
+	<td>
+		{{ form.username.errors}}
+    	{{ form.username.label_tag}}
+    	{{ form.username}}
+	</td>
+
+</tr>
+<tr>
+	<td>
+		{{ form.password.errors}}
+    	{{ form.password.label_tag}}
+    	{{ form.password}}
+	</td>
+</tr>
+<tr>
+ 	<td>
+    	<input type="submit" value="iniciar sesion">
+    </td>
+</tr>
+</form>
+<tr>
+	<td align="center"><a href="{% url 'cuenta:Registro' %}"><div>Registrarse</div></a></td>
+</tr>
+		
+</table></center>
+
+
+</body>
+</html>
+
+

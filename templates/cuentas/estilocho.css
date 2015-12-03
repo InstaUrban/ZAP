@@ -1,0 +1,124 @@
+div#cont{
+	background: #333;
+    border-radius: 15px;
+	width: 30%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    color: #19a9ff;
+    font-family: Verdana;
+	
+}
+div#cont > img {
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 15%;
+    
+    
+}
+
+div#cont > img#pp {
+    margin-left: 20px;
+    margin-right: auto;
+    padding-top: 2%;
+    max-width: 15%;
+    max-height: 15%;
+    
+    
+}
+
+div#cont > p {
+    margin-left: 15%;
+    margin-right: 15%;
+    padding-top: 15%;
+    
+    
+    color: #19a9ff;
+    font-family: Verdana;
+}
+
+div#cont > input {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    width: 200px;
+    height: 30px;
+    border-color: #7acdff ;
+    border-radius: 5px;
+    -webkit-transition: width 0.5s;
+}
+
+div#cont > input:hover{
+    width: 220px;
+}
+
+div#menu{ 
+   
+	padding-top: 2%;
+    width: 90% ;
+    margin-left: auto ;
+    margin-right: auto;
+
+}
+
+div#menu > a{
+    font-family: Verdana;
+    font-size:17px;
+    background: #333;
+    padding: 12px 24px;
+    color:#19a9ff;
+    
+    text-decoration:none;
+    border-radius: 5px;
+    transition: background 0.3s linear 0s, color 0.3s linear 0s;
+}
+
+div#menu > a:hover{
+    background: #7acdff;
+    color:#333;
+}
+
+div#top {
+    margin-left: 90%;
+}
+
+div#top > a{
+    background: #333;
+    border-radius: 15px;
+    color: #19a9ff;
+    text-decoration: none;
+    padding: 12px 24px;
+}
+
+img {
+    display: block;
+    max-width: 95%;
+    max-height: 95%;
+    width: auto;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    -webkit-transition: width 0.5s;
+}
+
+div#User {
+    margin-left: 20px;
+    margin-right: auto;
+    margin-bottom: 2%;
+}
+
+div#User > a{
+    text-decoration: none;
+    color:#19a9ff;
+    
+}
+
+div#User > img#pp{
+    margin-left: 20px;
+    margin-right: auto;
+    
+    padding-top: 2%;
+}

@@ -1,0 +1,117 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<html>
+<title>Zap!</title>
+<head>
+<style>
+
+a{
+	color: white;
+	text-decoration: none;
+
+}
+
+table{
+	padding-top: 250px;
+}
+
+input{
+	width: 200px;
+	height: 30px;
+	border-color: #7acdff ;
+	border-radius: 5px;
+	-webkit-transition: width 0.5s;
+}
+input:hover{
+	width: 220px;
+}
+
+div {
+	border-radius: 5px;
+	width: 180px;
+    height: 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #19a9ff;
+    font-family: Verdana;
+    -webkit-transition: width 2s, background-color 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
+	
+}
+div:hover {
+	background-color:#7acdff ;
+	width: 210px;
+	
+}
+div:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+</style>
+</head>
+<body background="{% static "img/back3.png" %}">
+
+	<form method="POST"><center><table>
+    	{% csrf_token %}
+<tr>
+	<td>
+		{{ form.username.errors}}
+    	{{ form.username.label_tag}}
+    	{{ form.username}}
+	</td>
+
+</tr>
+    	 
+    	 
+<tr>
+	<td>
+		{{ form.password1.errors}}
+    	{{ form.password1.label_tag}}
+    	{{ form.password1}}
+	</td>
+</tr><tr>
+	<td>
+		{{ form.password2.errors}}
+    	{{ form.password2.label_tag}}
+    	{{ form.password2}}
+	</td>
+</tr>
+<tr>
+    	 
+<tr>
+	<td>
+		{{ form.first_name.errors}}
+    	{{ form.first_name.label_tag}}
+    	{{ form.first_name}}
+	</td>
+</tr>
+<tr>
+	<td>
+		{{ form.last_name.errors}}
+    	{{ form.last_name.label_tag}}
+    	{{ form.last_name}}
+	</td>
+</tr>
+<tr>
+	<td>
+		{{ form.email.errors}}
+    	{{ form.email.label_tag}}
+    	{{ form.email}}
+	</td>
+<tr>
+ 	<td>
+    	<input type="submit" value="registrarse">
+    </td>
+</tr>
+    </table></center>
+    </form>
+
+</body>
+</html>
+
+
