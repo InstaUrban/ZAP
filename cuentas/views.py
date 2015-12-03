@@ -40,6 +40,9 @@ class Registro(SuccessMessageMixin, CreateView):
 
 class Cambio(UpdateView):
     """docstring for Cambio"""
+    form_class=RegisterForm
+    template_name= "registro.html"
+    success_url = reverse_lazy("cuenta:home")
 
 
 class Sesion(ListView):
