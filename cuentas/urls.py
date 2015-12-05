@@ -19,7 +19,7 @@ from cuentas.views import LoginDir, Registro, Logout, Sesion, Cambio
 urlpatterns = [
     url(r'^home/$', LoginDir.as_view(), name="home"),
     url(r'^Registro/', Registro.as_view(), name="Registro"),
-    url(r'Registro/(?P<pk>[0-9]+)/$', Cambio.as_view(), name='update'),
+    url(r'^Cambio/(?P<pk>\d+)$', Cambio.as_view(), name='update'),
     url(r'^Logout/$', Logout.as_view(), name="Logout"),
     url(r'^sesion/$', Sesion.as_view(), name="sesion")
 ]

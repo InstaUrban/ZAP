@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm
-from cuentas.forms import RegisterForm
+from cuentas.forms import RegisterForm, UpdateForm
 from django.views.generic import TemplateView, ListView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import CreateView, DeleteView, FormView, UpdateView
@@ -40,9 +40,10 @@ class Registro(SuccessMessageMixin, CreateView):
 
 class Cambio(UpdateView):
     """docstring for Cambio"""
-    form_class=RegisterForm
-    template_name= "registro.html"
-    success_url = reverse_lazy("cuenta:home")
+    model = User
+    form_class = UpdateForm
+    template_name = "cambio.html"
+    success_url = reverse_lazy("cuenta:sesion")
 
 
 class Sesion(ListView):

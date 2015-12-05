@@ -8,7 +8,7 @@ class Usuarios(models.Model):
     """docstring for telefono"""
     id_persona = models.OneToOneField(User)
     tel = models.IntegerField(null=True, blank=True)
-    fecha = models. DateField(auto_now=False, auto_now_add=False)
+    fecha = models.DateField(auto_now=False, auto_now_add=False)
 
 
 class Tipnot(models.Model):
