@@ -14,12 +14,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url
-from cuentas.views import LoginDir, Registro, Logout, Sesion, Cambio
+from cuentas.views import LoginDir, Registro, Logout, Sesion, Cambio, CambioPerfil, VerAmg
+from django.conf.urls.static import static
+from ZAP import settings
 
 urlpatterns = [
-    url(r'^home/$', LoginDir.as_view(), name="home"),
+    url(r'^home/', LoginDir.as_view(), name="home"),
     url(r'^Registro/', Registro.as_view(), name="Registro"),
     url(r'^Cambio/(?P<pk>\d+)$', Cambio.as_view(), name='update'),
     url(r'^Logout/$', Logout.as_view(), name="Logout"),
-    url(r'^sesion/$', Sesion.as_view(), name="sesion")
-]
+    url(r'^sesion/', Sesion.as_view(), name="sesion"),
+    url(r'^cambioimg/(?P<pk>\d+)$', CambioPerfil.as_view(), name='cambioimg'),
+    url(r'^Amigosdet/', VerAmg.as_view(), name="Amigosdet"),
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

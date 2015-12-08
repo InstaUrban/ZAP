@@ -1,6 +1,6 @@
 from django.forms import ModelForm
 from django.contrib.auth.models import User
-from cuentas.models import Usuarios
+from cuentas.models import Usuarios, Amigo
 from django import forms
 
 # Create the form class.
@@ -41,6 +41,7 @@ class RegisterForm(ModelForm):
             user.save()
         Usuarios.objects.create(id_persona=user, tel=self.cleaned_data[
             "telephone"], fecha=self.cleaned_data["date"])
+        Amigo.objects.create(usr1=user)
         return user
 
 
@@ -76,3 +77,31 @@ class UpdateForm(ModelForm):
         if commit:
             user.save()
         return user
+
+
+class UpdateImg(ModelForm):
+
+    class Meta:
+        model = Usuarios
+        fields = ['image']
+
+    def save(self, commit=True):
+        usuarios = super(UpdateImg, self).save(commit=False)
+        usuarios.id_persona = User
+        if commit:
+            usuarios.save()
+        return usuarios
+
+
+class UpdateAmg(ModelForm):
+
+    class Meta:
+        model = Amigo
+        fields = ['usr2']
+
+    def save(self, commit=True):
+        amigo = super(UpdateAmg, self).save(commit=False)
+        amigo.usr1 = User
+        if commit:
+            amigo.usr1.usr2.add(amigo)
+        return amigo

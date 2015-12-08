@@ -56,7 +56,7 @@ div:active {
 </head>
 <body background="{% static "img/back3.png" %}">
 
-	<form method="POST" enctype="multipart/form-data"><center><table>
+	<form method="POST"><center><table>
     	{% csrf_token %}
 <tr>
 	<td>
@@ -64,8 +64,7 @@ div:active {
 	</td>
 
 </tr>
- 
-<tr>
+
  	<td>
     	<input type="submit" value="registrarse">
     </td>

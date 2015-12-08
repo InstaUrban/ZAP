@@ -172,11 +172,17 @@ th#name {
 
         <table cellpadding="10">
             <tr>{% for usuarios in object_list %}
+                <th id="pic"></th>
                 {% if usuarios.image %}
-                <th id="pic"><a href="{% url 'cuenta:cambioimg' usuarios.id %}"><img src="{{ usuarios.image.url}}" id="pp"></a> </th>
+                
+                    {{ usuarios.id_persona }}
+                    
+                    <img src="{{ usuarios.image.url }}" id="pp"> <button value="{{ usuarios.id_persona }}">add +</button><br>
+                    <br><br>
                 {% else %}
-                 <th id="pic"><a href="{% url 'cuenta:cambioimg' usuarios.id %}">agregar imagen</a></th>
-                 {% endif %}   
+                    {{ usuarios.id_persona }}<br> 
+                    <br><br>
+                {% endif %}
             {% endfor %}</tr>
 
                             
@@ -184,10 +190,9 @@ th#name {
 
 
             <tr>
-                <th id="name">{{ user.username }}  {{ user.first_name }} {{ user.last_name }}{{ usuarios.tel }}</th>
+                
             </tr>
-            
-            <a href="{% url 'cuenta:update' user.id %}">cambiar</a>
+                
 
         </table>
 

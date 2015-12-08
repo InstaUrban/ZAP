@@ -9,6 +9,14 @@ class Usuarios(models.Model):
     id_persona = models.OneToOneField(User)
     tel = models.IntegerField(null=True, blank=True)
     fecha = models.DateField(auto_now=False, auto_now_add=False)
+    image = models.ImageField(upload_to="img/img_usr", null=True, blank=True)
+
+    def get_image(self):
+        try:
+            return '<img src="%s" style="display: block; width: 60px;"/>' % self.image.url
+        except:
+            return "<h3>No image</h3>"
+    get_image.allow_tags = True
 
 
 class Tipnot(models.Model):
