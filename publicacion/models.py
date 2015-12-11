@@ -9,6 +9,8 @@ class Publica(models.Model):
     id_user = models.ForeignKey(User)
     publicacion = models.TextField(max_length=300, blank=False)
     image = models.ImageField(upload_to="img/img_usr", null=True, blank=True)
+    like = models.IntegerField(null=True, blank=True,default=0)
+    dislike = models.IntegerField(null=True, blank=True,default=0)
 
     def get_image(self):
         try:

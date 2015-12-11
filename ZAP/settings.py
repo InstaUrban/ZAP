@@ -38,7 +38,8 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cuentas',
-    'publicacion'
+    'publicacion',
+    'bootstrap3',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,7 +98,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_URL = '/home'
+LOGIN_URL = '/home/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 

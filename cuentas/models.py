@@ -33,4 +33,4 @@ class Noticia(models.Model):
 class Amigo(models.Model):
     """docstring for Amigo"""
     usr1 = models.OneToOneField(User)
-    usr2 = models.ManyToManyField('Amigo')
+    usr2 = models.ManyToManyField('self')

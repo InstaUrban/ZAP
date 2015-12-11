@@ -13,7 +13,7 @@ class Publicaform(ModelForm):
 
     def save(self, commit=True):
         publica = super(Publicaform, self).save(commit=False)
-        publica.id_user = user
+        publica.id_user = User
         if commit:
             publica.save()
         return publica

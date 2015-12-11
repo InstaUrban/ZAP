@@ -46,13 +46,9 @@ class Cambio(UpdateView):
     template_name = "cambio.html"
     success_url = reverse_lazy("cuenta:sesion")
 
-
-class Friend(CreateView):
-    """docstring for Cambio"""
-    model = Amigo
-    template_name = "Amigo.html"
-    success_url = reverse_lazy("cuenta:sesion")
-    form_class = UpdateAmg
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(Cambio, self).dispatch(request, *args, **kwargs)
 
 
 class CambioPerfil(UpdateView):
@@ -62,6 +58,10 @@ class CambioPerfil(UpdateView):
     fields = ['image']
     template_name = "cambioimg.html"
     success_url = reverse_lazy("cuenta:sesion")
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super(CambioPerfil, self).dispatch(request, *args, **kwargs)
 
 
 class Sesion(ListView):
@@ -75,14 +75,32 @@ class Sesion(ListView):
         return super(Sesion, self).dispatch(self.request, *args, **kwargs)
 
 
-class VerAmg(ListView):
-    model = Usuarios
+class VerAmg(CreateView):
+    model = Amigo
     template_name = "amigosd.html"
+    fields = ['usr2']
 
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
-        self.queryset = Usuarios.objects.all()
-        return super(VerAmg, self).dispatch(self.request, *args, **kwargs)
+        return super(VerAmg, self).dispatch(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        user = self.request.user
+        kwargs['object_list'] = Usuarios.objects.exclude(id_persona=user.id)
+        return super(VerAmg, self).get_context_data(**kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = request.POST['idper']
+        print(data)
+        user = self.request.user
+        me = Amigo.objects.get(usr2=user.id)
+        user2 = Usuarios.objects.get(id=data)
+        amigo = Amigo.objects.get(usr1=user2.id_persona)
+        print(user2.id_persona)
+        print(me.usr1)
+        me.usr2.add(amigo)
+        me.save()
+        return redirect(reverse_lazy("cuenta:Amigosdet"), *args, **kwargs)
 
 
 class Logout(RedirectView):
@@ -91,3 +109,14 @@ class Logout(RedirectView):
     def get(self, request, *args, **kwargs):
         logout(request)
         return super(Logout, self).get(request, *args, **kwargs)
+
+
+class Amgadd(ListView):
+    model = Amigo
+    template_name = "amigosdetail.html"
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        user = self.request.user
+        self.queryset = Usuarios.objects.filter(id_persona=user)
+        return super(Amgadd, self).dispatch(self.request, *args, **kwargs)

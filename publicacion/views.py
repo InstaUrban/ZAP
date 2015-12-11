@@ -13,7 +13,7 @@ class Publicaon(CreateView):
     """docstring for Cambio"""
     model = Publica
     template_name = "publicacion.html"
-    success_url = reverse_lazy("cuenta:sesion")
+    success_url = reverse_lazy("cuenta:publicaciondet")
     fields = ['publicacion', 'image']
 
     def form_valid(self, form):
@@ -28,5 +28,5 @@ class Publicadet(ListView):
     template_name = "publicaciond.html"
 
     def dispatch(self, request, *args, **kwargs):
-        self.queryset = Publica.objects.all()
+        self.queryset = Publica.objects.all().order_by('id')[::-1]
         return super(Publicadet, self).dispatch(self.request, *args, **kwargs)

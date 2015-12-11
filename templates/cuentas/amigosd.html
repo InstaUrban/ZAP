@@ -171,18 +171,24 @@ th#name {
 
 
         <table cellpadding="10">
+            
             <tr>{% for usuarios in object_list %}
                 <th id="pic"></th>
+                <form method="post">
+                {% csrf_token %}    
                 {% if usuarios.image %}
                 
                     {{ usuarios.id_persona }}
                     
-                    <img src="{{ usuarios.image.url }}" id="pp"> <button value="{{ usuarios.id_persona }}">add +</button><br>
-                    <br><br>
+                    <img src="{{ usuarios.image.url }}" id="pp">
+                    
+                    <br><input type="hidden" value="{{ usuarios.id }}" name="idper"> <br>
                 {% else %}
-                    {{ usuarios.id_persona }}<br> 
+                    {{ usuarios.id_persona }}<br> <input type="hidden" value="{{ usuarios.id }}" name="idper">
                     <br><br>
                 {% endif %}
+<input type="submit" value="follow +"> <br>
+            </form>
             {% endfor %}</tr>
 
                             

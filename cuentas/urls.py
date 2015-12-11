@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include(blog_urls))
 """
 from django.conf.urls import url
-from cuentas.views import LoginDir, Registro, Logout, Sesion, Cambio, CambioPerfil, VerAmg
+from cuentas.views import LoginDir, Registro, Logout, Sesion, Cambio, CambioPerfil, VerAmg, Amgadd
 from django.conf.urls.static import static
 from ZAP import settings
 
@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^sesion/', Sesion.as_view(), name="sesion"),
     url(r'^cambioimg/(?P<pk>\d+)$', CambioPerfil.as_view(), name='cambioimg'),
     url(r'^Amigosdet/', VerAmg.as_view(), name="Amigosdet"),
+    url(r'^Amigos/', Amgadd.as_view(), name="Amigos"),
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

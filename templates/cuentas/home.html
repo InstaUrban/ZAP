@@ -1,5 +1,6 @@
 {% load static from staticfiles %}
 <!DOCTYPE html>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <html>
 <title>Zap!</title>
@@ -13,55 +14,96 @@ a{
 }
 
 table{
-	padding-top: 250px;
+	position: absolute;
+	top: calc(20%);
+	left: calc(30%);
+background-color:#DFF2F5;
+opacity:0.9;
+
 }
 
-input{
-	width: 200px;
+
+input[type=text]{
+	width: 455px;
 	height: 30px;
 	border-color: #7acdff ;
 	border-radius: 5px;
 	-webkit-transition: width 0.5s;
 }
-input:hover{
-	width: 220px;
+input[type=text]:hover{
+	width: 460px;
 }
 
-div {
+input[type=password]{
+	width: 455px;
+	height: 30px;
+	border-color: #7acdff ;
+	border-radius: 5px;
+	-webkit-transition: width 0.5s;
+}
+input[type=password]:hover{
+	width: 460px;
+}
+
+
+#id1{
+border-radius: 5px;
+	width: 200px;
+    height: 43px;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #9C4343;
+    font-family: Verdana;
+    -webkit-transition: width 2s, background-color 2s; /* For Safari 3.1 to 6.0 */
+    transition: width 0.5s;
+
+}
+
+#id1:hover{
+border-left:5px solid #D62C2C;
+	
+}
+#id1:active{
+position:relative;
+	top:1px;
+}
+#div {
 	border-radius: 5px;
 	width: 180px;
     height: 30px;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
-    background: #19a9ff;
+    background: #9C4343;
     font-family: Verdana;
     -webkit-transition: width 2s, background-color 2s; /* For Safari 3.1 to 6.0 */
     transition: width 0.5s;
 	
 }
-div:hover {
-	background-color:#7acdff ;
-	width: 210px;
+#div:hover {
+border-left:5px solid #D62C2C;
 	
 }
-div:active {
+#div:active {
 	position:relative;
 	top:1px;
 }
-
+body{
+	background-image: url({% static "img/back4.jpg" %});
+	background-size: cover;
+}
 
 
 </style>
 </head>
-<body background="{% static "img/back3.png" %}">
+<body background="">
 
 <center><table><form method="POST">
     	{% csrf_token %}
 <tr>
 				<td><img src="{% static "img/ZAP.png" %}"></td>
 			</tr>
-			
 <tr>
 	<td>
 		{{ form.username.errors}}
@@ -78,13 +120,12 @@ div:active {
 	</td>
 </tr>
 <tr>
- 	<td>
-    	<input type="submit" value="iniciar sesion">
+ 	<td align="center">
+    	<input type="submit" value="iniciar sesion"   id="id1">
     </td>
-</tr>
 </form>
 <tr>
-	<td align="center"><a href="{% url 'cuenta:Registro' %}"><div>Registrarse</div></a></td>
+	<td align="center"><a href="{% url 'cuenta:Registro' %}"><div id="div">Registrarse</div></a></td>
 </tr>
 		
 </table></center>
@@ -92,5 +133,3 @@ div:active {
 
 </body>
 </html>
-
-
