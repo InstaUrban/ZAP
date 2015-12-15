@@ -17,8 +17,8 @@ class RegisterForm(ModelForm):
         "Password confirmation"),
         widget=forms.PasswordInput,
         help_text=("Enter the same password as above, for verification."))
-    telephone = forms.CharField(label=("telephone"))
-    date = forms.DateField(label=("birthday"))
+    telephone = forms.CharField(label=("Telephone"))
+    date = forms.DateField(label=("Birthday yyyy-mm-dd"))
 
     class Meta:
         model = User

@@ -93,7 +93,8 @@ class VerAmg(CreateView):
         data = request.POST['idper']
         print(data)
         user = self.request.user
-        me = Amigo.objects.get(usr2=user.id)
+        me = Amigo.objects.get(usr1=user.id)
+        print(me)
         user2 = Usuarios.objects.get(id=data)
         amigo = Amigo.objects.get(usr1=user2.id_persona)
         print(user2.id_persona)

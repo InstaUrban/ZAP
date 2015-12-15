@@ -236,7 +236,7 @@ div#menu > a{
     font-family: Verdana;
     font-size:17px;
     background: #333;
-    padding: 12px 24px;
+    padding: 3px 24px;
     color:#19a9ff;
     
     text-decoration:none;
@@ -281,7 +281,7 @@ div#menu > a:hover{
             {% endfor %}
                 
                 <hr>
-                <h1 class="tm-title bold shadow">Hi, I am {{ user.username }}</h1>
+                <h1 class="tm-title bold shadow">Bienvenido {{ user.username }}</h1>
             </div>
         </div>
     </div>
@@ -292,10 +292,10 @@ div#menu > a:hover{
     <div class="row">
         <div class="col-md-12 col-sm-12">
             <div class="about">
-                <h3 class="accent">My info</h3><a href="{% url 'cuenta:update' user.id %}">Edit</a>
+                <h3 class="accent">Mi información</h3><a href="{% url 'cuenta:update' user.id %}">Editar</a>
                 <p>{{ user.username }}</p>
-                <p>Name: {{ user.first_name }}</p>
-                <p>Lastname: {{ user.last_name }}</p>
+                <p>Nombre: {{ user.first_name }}</p>
+                <p>Apellido: {{ user.last_name }}</p>
             </div>
         </div>
         

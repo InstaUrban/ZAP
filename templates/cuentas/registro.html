@@ -18,7 +18,7 @@ table{
 	left: calc(30%);
 background-color:#DFF2F5;
 
-opacity:0.9;
+opacity:0.96;
 
 }
 
@@ -63,6 +63,7 @@ border-radius: 5px;
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    color: #fff;
     background: #9C4343;
     font-family: Verdana;
     -webkit-transition: width 2s, background-color 2s; /* For Safari 3.1 to 6.0 */
@@ -114,7 +115,7 @@ body{
 <tr>
 	<td>
 		{{ form.username.errors}}
-    	{{ form.username.label_tag}}
+    	{{ form.username.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.username}}
 	</td>
 
@@ -124,7 +125,7 @@ body{
 <tr>
 	<td>
 		{{ form.password1.errors}}
-    	{{ form.password1.label_tag}}
+    	{{ form.password1.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.password1}}
 	</td>
 </tr><tr>
@@ -139,27 +140,27 @@ body{
 <tr>
 	<td>
 		{{ form.first_name.errors}}
-    	{{ form.first_name.label_tag}}
+    	{{ form.first_name.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.first_name}}
 	</td>
 </tr>
 <tr>
 	<td>
 		{{ form.last_name.errors}}
-    	{{ form.last_name.label_tag}}
+    	{{ form.last_name.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.last_name}}
 	</td>
 </tr>
 <tr>
 	<td>
 		{{ form.email.errors}}
-    	{{ form.email.label_tag}}
+    	{{ form.email.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.email}}
 	</td>
 <tr><tr>
 	<td>
 		{{ form.telephone.errors}}
-    	{{ form.telephone.label_tag}}
+    	{{ form.telephone.label_tag}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     	{{ form.telephone}}
 	</td>
 <tr><tr>
@@ -169,8 +170,18 @@ body{
     	{{ form.date}}
 	</td>
 <tr>
- 	<td>
-    	<input type="submit" value="registrarse" id="id1">
+ 	<td align="center">
+    	<input type="submit" value="Registrarse" id="id1">&nbsp;&nbsp;&nbsp;&nbsp;
+
+    	<a href="{% url 'cuenta:home' %}" style="color: white;
+    text-decoration: none;
+    background: rgba(204, 52, 65, 0.84);
+    width: 12px;
+    height: 12px;
+    padding-top: 15px;
+    padding-bottom: 9px;
+    padding-right: 50px;
+    padding-left: 50px;">Regresar</a>
     </td>
 </tr>
     </table></center>

@@ -1,4 +1,4 @@
 from django.contrib import admin
-from cuentas.models import Usuarios, Tipnot, Noticia, Amigo
-admin.site.register([Usuarios, Tipnot, Noticia, Amigo])
+from cuentas.models import Usuarios
+admin.site.register([Usuarios])
 # Register your models here.

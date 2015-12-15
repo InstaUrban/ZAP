@@ -13,7 +13,7 @@ class Publicaon(CreateView):
     """docstring for Cambio"""
     model = Publica
     template_name = "publicacion.html"
-    success_url = reverse_lazy("cuenta:publicaciondet")
+    success_url = reverse_lazy("publicacion:publicaciondet")
     fields = ['publicacion', 'image']
 
     def form_valid(self, form):

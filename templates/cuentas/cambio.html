@@ -16,7 +16,7 @@ table{
 	top: calc(20%);
 	left: calc(30%);
 background-color:#DFF2F5;
-opacity:0.9;
+opacity:0.96;
 
 }
 
@@ -100,16 +100,16 @@ body{
     	{% csrf_token %}
 <tr>
 	<td>
-		{{ form.as_p}}
+		{{ form.as_table}}
 	</td>
 
 </tr>
- 
-<tr>
+ <center>
+<tr><td></td>
  	<td>
-    	<input type="submit" value="registrarse" id="id1">
+    	<input type="submit" value="Confirmar" id="id1">
     </td>
-</tr>
+</tr></center>
     </table></center>
     </form>
 

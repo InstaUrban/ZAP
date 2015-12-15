@@ -17,7 +17,7 @@ table{
 	left: calc(30%);
 background-color:#8CACB1;
 
-opacity:0.9;
+opacity:0.96;
 
 }
 
@@ -99,6 +99,14 @@ body{
 
 	<form method="POST" enctype="multipart/form-data"><center><table>
     	{% csrf_token %}
+    		<td>
+    	<input type="submit" value="Publicar">
+    </td>
+ 	<td>
+    	
+    <a href="{% url 'publicacion:publicaciondet' %}">Regresar</a>
+    </td>
+</tr>
 <tr>
 	<td>
 		{{ form.as_p}}
@@ -106,14 +114,6 @@ body{
 
 </tr>
 
- 	<td>
-    	<input type="submit" value="publicar">
-    </td>
- 	<td>
-    	
-    <a href="{% url 'publicacion:publicaciondet' %}">regresar</a>
-    </td>
-</tr>
 
     </table></center>
 
